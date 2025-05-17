@@ -5,7 +5,7 @@ public class Client extends Thread {
     }
 
     private void send() {
-        int order = Producer.add();
+        int order = OrderQueueManager.addOrder();
 
         if (order == -1) {
             System.out.println("Shutting down thread: " + getName());
